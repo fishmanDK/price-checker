@@ -1,4 +1,4 @@
-package kafkaproducer
+package kafka
 
 import (
 	"encoding/json"

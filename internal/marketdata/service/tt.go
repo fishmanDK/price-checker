@@ -2,7 +2,6 @@ package service
 
 import (
 	"os"
-	"time"
 )
 
 var errorsFile, _ = os.Open("data/errors.txt")
@@ -25,8 +24,7 @@ var importantTokens = map[string]bool{
 	"TRX":  true,
 }
 
-type SymbolPriceToken struct {
-	Symbol string `json:"symbol"`
+type PriceToken struct {
 	Price  string `json:"price"`
 }
 
@@ -114,26 +112,4 @@ var tokensTrade = map[string]struct{}{
 	"1INCH":        struct{}{},
 	"NEXO":        struct{}{},
 	"RPL":        struct{}{},
-}
-
-type StatisticAlong struct {
-	// Left int
-	// Right int
-	Current  int
-	TotalSum float64
-}
-
-type StatisticToken struct {
-	PricesAlong1H    StatisticAlong
-	PricesAlont30Min StatisticAlong
-
-	Round1H     int
-	Prices1H    [12]float64
-	Round30Min  int
-	Prices30Min [6]float64
-
-	Start       time.Time
-	PriceStart  float64
-	Coefficient float64
-	LastPrice   float64
 }

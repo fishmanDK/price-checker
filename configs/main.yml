@@ -1,0 +1,15 @@
+http:
+  port: 8000
+  maxHeaderBytes: 1
+  readTimeout: 10s
+  writeTimeout: 10s
+
+logger:
+  level: debug
+  devMode: false
+  encoder: json
+
+kafka:
+  brokers: [ "localhost:9092" ]
+  groupID: writer_microservice_consumer
+  initTopics: true

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package kafkaMessages;
+
+option go_package = "./;kafkaMessages";
+
+message Token {
+    string Symbol = 1;
+    double Price = 2;
+    google.protobuf.Timestamp UpdatedAT = 3;
+}
